@@ -17,7 +17,7 @@ resource "azurerm_linux_virtual_machine" "examplevm" {
   name                = "example-vm"
   resource_group_name = var.resource_group_name
   location            = var.resource_group_location
-  size                = "Standard_A1"
+  size                = "Standard_A1_v2"
   admin_username      = "adminuser"
   network_interface_ids = [
     var.target_network_interface,
