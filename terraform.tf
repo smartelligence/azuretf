@@ -29,7 +29,7 @@ module "vm" {
   source = "./servers"
   resource_group_name    = azurerm_resource_group.examplerg.name
   resource_group_location = azurerm_resource_group.examplerg.location
-  network_interface_id = module.network.network_interface_id
+  target_network_interface = module.network.target_network_interface
 }
 
 output "resource_group_name" {
