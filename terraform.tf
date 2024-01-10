@@ -9,6 +9,8 @@ terraform {
 
 provider "azurerm" {
   features {}  # The features block is required, but can be empty
+  skip_provider_registration = true # This is only required when the User, Service Principal, or Identity running Terraform lacks the permissions to register Azure Resource Providers.
+
   # Other optional configurations like authentication can be added here
 }
 
