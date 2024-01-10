@@ -17,7 +17,6 @@ resource "azurerm_resource_group" "example" {
   location = "East US"
 }
 
-
 # include network tf file
 module "network" {
   source = "./network"
