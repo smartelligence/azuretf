@@ -20,11 +20,16 @@ resource "azurerm_resource_group" "examplerg" {
 # include network tf file
 module "network" {
   source = "./network"
+  resource_group_name    = azurerm_resource_group.examplerg.name
+  resource_group_location = azurerm_resource_group.examplerg.location
 }
 
 # include vm tf file
 module "vm" {
   source = "./servers"
+  resource_group_name    = azurerm_resource_group.examplerg.name
+  resource_group_location = azurerm_resource_group.examplerg.location
+  network_interface_id = module.network.network_interface_id
 }
 
 output "resource_group_name" {
