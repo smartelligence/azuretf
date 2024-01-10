@@ -8,8 +8,8 @@ variable "resource_group_location" {
   type        = string
 }
 
-variable "network_interface_id" {
-  description = "The id of the network interface"
+variable "target_network_interface" {
+  description = "The target network interface"
   type        = string
 }
 
@@ -20,7 +20,7 @@ resource "azurerm_linux_virtual_machine" "examplevm" {
   size                = "Standard_A1"
   admin_username      = "adminuser"
   network_interface_ids = [
-    network_interface_id,
+    target_network_interface.id,
   ]
 
   admin_ssh_key {
