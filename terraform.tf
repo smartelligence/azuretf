@@ -12,7 +12,7 @@ provider "azurerm" {
   # Other optional configurations like authentication can be added here
 }
 
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "examplerg" {
   name     = "example-resources"
   location = "East US"
 }
@@ -27,3 +27,10 @@ module "vm" {
   source = "./servers"
 }
 
+output "resource_group_name" {
+  value = azurerm_resource_group.examplerg.name
+}
+
+output "resource_group_location" {
+  value = azurerm_resource_group.examplerg.location
+}
