@@ -20,7 +20,7 @@ resource "azurerm_linux_virtual_machine" "examplevm" {
   size                = "Standard_A1"
   admin_username      = "adminuser"
   network_interface_ids = [
-    target_network_interface.id,
+    var.target_network_interface,
   ]
 
   admin_ssh_key {
