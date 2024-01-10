@@ -35,5 +35,5 @@ resource "azurerm_network_interface" "exampleif" {
 }
 
 output "target_network_interface" {
-  value = azurerm_network_interface.exampleif
+  value = azurerm_network_interface.exampleif.id
 }
