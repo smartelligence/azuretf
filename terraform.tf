@@ -12,7 +12,11 @@ provider "azurerm" {
   # Other optional configurations like authentication can be added here
 }
 
-# Define your resources and modules that use this provider here
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "East US"
+}
+
 
 # include network tf file
 module "network" {
@@ -23,3 +27,4 @@ module "network" {
 module "vm" {
   source = "./servers"
 }
+
